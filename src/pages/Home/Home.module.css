@@ -1,0 +1,77 @@
+.hero {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(180deg, #fff9e6, #ffffff);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btnMain {
+  background-color: var(--color-primary);
+  border: none;
+  font-weight: 600;
+}
+
+.btnMain:hover {
+  opacity: 0.9;
+}
+
+.howItWorks {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  color: #000;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
