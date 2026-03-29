@@ -3,6 +3,8 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 import "./styles/theme.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+
 import AppProviders from "./providers/AppProviders";
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home/Home";
@@ -20,6 +22,9 @@ function App() {
             <Route path="/dicono-di-noi" element={<DiconoDiNoi />} />
           </Route>
         </Routes>
+
+        <Analytics />     {/* Aggiunto per vercel */}
+
       </BrowserRouter>
     </AppProviders>
   );
