@@ -1,30 +1,25 @@
 import { Container, Button } from "react-bootstrap";
+import { useLanguage } from "../../hooks/useLanguage";
 import styles from "./Servizi.module.css";
 
 export default function Servizi() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.servicesPage}>
       <Container>
         <div className={styles.header}>
-          <h1 className={styles.title}>I nostri servizi</h1>
-          <p className={styles.subtitle}>
-            Offriamo servizi utili per chi vuole crescere online, migliorare la propria presenza digitale
-            e gestire meglio il proprio profilo Instagram.
-          </p>
+          <p className={styles.eyebrow}>{t("servicesEyebrow")}</p>
+          <h1 className={styles.title}>{t("servicesTitle")}</h1>
+          <p className={styles.subtitle}>{t("servicesSubtitle")}</p>
         </div>
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <div className={styles.badge}>Siti vetrina</div>
-            <h2 className={styles.cardTitle}>Realizzazione siti vetrina</h2>
-            <p className={styles.cardText}>
-              Realizziamo siti vetrina moderni, semplici e professionali a un ottimo prezzo.
-              Se hai un’attività, un progetto o un brand personale, possiamo aiutarti a creare
-              una presenza online chiara, elegante e adatta alla tua immagine.
-            </p>
-            <p className={styles.cardText}>
-              Contattaci per richiedere un preventivo personalizzato in base alle tue esigenze.
-            </p>
+            <div className={styles.badge}>{t("siteBadge")}</div>
+            <h2 className={styles.cardTitle}>{t("siteTitle")}</h2>
+            <p className={styles.cardText}>{t("siteText1")}</p>
+            <p className={styles.cardText}>{t("siteText2")}</p>
 
             <a
               href="https://www.instagram.com/mida.lot/"
@@ -33,23 +28,16 @@ export default function Servizi() {
               className={styles.linkWrap}
             >
               <Button className={styles.primaryBtn}>
-                Richiedi un preventivo
+                {t("siteBtn")}
               </Button>
             </a>
           </div>
 
           <div className={styles.card}>
-            <div className={styles.badge}>Instagram</div>
-            <h2 className={styles.cardTitle}>Analisi follower</h2>
-            <p className={styles.cardText}>
-              Vuoi sapere quali account segui ma non ti seguono?
-              Possiamo aiutarti a ottenere una lista chiara dei profili che non ricambiano il follow,
-              così da avere una panoramica più ordinata del tuo account.
-            </p>
-            <p className={styles.cardText}>
-              È un servizio pensato per chi vuole controllare meglio il proprio profilo Instagram
-              e capire più facilmente le proprie connessioni.
-            </p>
+            <div className={styles.badge}>{t("followerBadge")}</div>
+            <h2 className={styles.cardTitle}>{t("followerTitle")}</h2>
+            <p className={styles.cardText}>{t("followerText1")}</p>
+            <p className={styles.cardText}>{t("followerText2")}</p>
 
             <a
               href="https://www.instagram.com/mida.lot/"
@@ -57,8 +45,8 @@ export default function Servizi() {
               rel="noopener noreferrer"
               className={styles.linkWrap}
             >
-              <Button variant="outline-dark">
-                Contattaci per saperne di più
+              <Button variant="outline-dark" className={styles.secondaryBtn}>
+                {t("followerBtn")}
               </Button>
             </a>
           </div>

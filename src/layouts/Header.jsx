@@ -2,8 +2,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../hooks/useTheme";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Header() {
+  const { theme, toggleTheme } = useTheme();
+  const { lang, setLang, t } = useLanguage();
+
   return (
     <Navbar className="custom-navbar" expand="lg" sticky="top">
       <Container>
@@ -14,7 +19,7 @@ export default function Header() {
         >
           <img
             src="/Midalot.png"
-            alt="Logo"
+            alt="Logo Mida"
             style={{ width: "26px" }}
           />
           Mida
@@ -23,7 +28,7 @@ export default function Header() {
         <Navbar.Toggle aria-controls="main-navbar" />
 
         <Navbar.Collapse id="main-navbar">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto align-items-lg-center">
             <Nav.Link
               as={NavLink}
               to="/"
@@ -32,27 +37,7 @@ export default function Header() {
                 isActive ? "nav-link active-link" : "nav-link"
               }
             >
-              Home
-            </Nav.Link>
-
-            <Nav.Link
-              as={NavLink}
-              to="/giveaway"
-              className={({ isActive }) =>
-                isActive ? "nav-link active-link" : "nav-link"
-              }
-            >
-              Giveaway
-            </Nav.Link>
-
-            <Nav.Link
-              as={NavLink}
-              to="/collaborazioni"
-              className={({ isActive }) =>
-                isActive ? "nav-link active-link" : "nav-link"
-              }
-            >
-              Collaborazioni
+              {t("navHome")}
             </Nav.Link>
 
             <Nav.Link
@@ -62,18 +47,26 @@ export default function Header() {
                 isActive ? "nav-link active-link" : "nav-link"
               }
             >
-              Servizi
+              {t("navServices")}
             </Nav.Link>
 
-            <Nav.Link
-              as={NavLink}
-              to="/recensioni"
-              className={({ isActive }) =>
-                isActive ? "nav-link active-link" : "nav-link"
-              }
-            >
-              Recensioni
-            </Nav.Link>
+            <div className="header-actions">
+              <button
+                type="button"
+                className="header-chip"
+                onClick={() => setLang(lang === "it" ? "en" : "it")}
+              >
+                {lang.toUpperCase()}
+              </button>
+
+              <button
+                type="button"
+                className="header-chip"
+                onClick={toggleTheme}
+              >
+                {theme === "light" ? "Dark" : "Light"}
+              </button>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

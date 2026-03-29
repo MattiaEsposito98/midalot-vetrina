@@ -3,26 +3,30 @@ import Container from "react-bootstrap/Container";
 export default function Footer() {
   return (
     <footer className="custom-footer">
-      <Container className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <Container className="footer-inner">
+        <div className="footer-brand">
+          <div className="footer-logoWrap">
+            <img src="/Midalot.png" alt="Logo Mida" className="footer-logo" />
+            <span className="footer-brandName">Mida</span>
+          </div>
 
-        {/* Testo */}
-        <div className="footer-text">
-          © {new Date().getFullYear()} Mida. All rights reserved.
+          <p className="footer-copy">
+            © {new Date().getFullYear()} Mida. All rights reserved.
+          </p>
         </div>
 
-        {/* Social */}
-        <div className="footer-socian">
+        <div className="footer-social">
           <a
             href="https://www.instagram.com/mida.lot/"
             target="_blank"
             rel="noopener noreferrer"
             className="instagram-link"
+            aria-label="Instagram Mida"
           >
             <i className="bi bi-instagram"></i>
-            Mida
+            <span>@mida.lot</span>
           </a>
         </div>
-
       </Container>
     </footer>
   );

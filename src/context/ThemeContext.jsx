@@ -3,14 +3,17 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  );
 
-  const toggleTheme = () =>
-    setTheme(t => (t === "light" ? "dark" : "light"));
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
-  // applica classe al body
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (

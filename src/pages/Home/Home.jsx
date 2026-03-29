@@ -1,64 +1,85 @@
 import { Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useLanguage } from "../../hooks/useLanguage";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
-    <>
-      <section className={styles.hero}>
-        <Container className="text-center">
-          <h1 className={styles.title}>
-            Vinci premi reali 🎁
-          </h1>
+    <section className={styles.homePage}>
+      <Container>
+        <div className={styles.heroGrid}>
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>{t("heroEyebrow")}</p>
 
-          <p className={styles.subtitle}>
-            Partecipa ai nostri giveaway e scopri le collaborazioni che aiutano a far crescere pagine e community su Instagram.
-          </p>
+            <h1 className={styles.title}>{t("heroTitle")}</h1>
 
-          <div className={styles.buttons}>
-            <a
-              href="https://www.instagram.com/mida.lot/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className={styles.btnMain}>
-                Vai su Instagram
-              </Button>
-            </a>
+            <p className={styles.subtitle}>{t("heroSubtitle")}</p>
 
-            <Button variant="outline-dark">
-              Scopri come funziona
-            </Button>
-          </div>
-        </Container>
-      </section>
+            <div className={styles.buttons}>
+              <a
+                href="https://www.instagram.com/mida.lot/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.linkWrap}
+              >
+                <Button className={styles.btnMain}>
+                  {t("heroInstagram")}
+                </Button>
+              </a>
 
-      <section className={styles.howItWorks}>
-        <Container>
-          <h2 className={styles.sectionTitle}>
-            Come funziona
-          </h2>
-
-          <div className={styles.steps}>
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>1</div>
-              <h4>Segui la pagina</h4>
-              <p>Vai su Instagram e segui il nostro profilo.</p>
-            </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>2</div>
-              <h4>Partecipa al giveaway</h4>
-              <p>Segui le istruzioni indicate nei post pubblicati.</p>
-            </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>3</div>
-              <h4>Attendi l’estrazione</h4>
-              <p>I vincitori vengono selezionati e verificati in modo trasparente.</p>
+              <Link to="/servizi" className={styles.linkWrap}>
+                <Button variant="outline-dark" className={styles.btnSecondary}>
+                  {t("heroServices")}
+                </Button>
+              </Link>
             </div>
           </div>
-        </Container>
-      </section>
-    </>
+
+          <div className={styles.heroVisual}>
+            <div className={styles.visualCard}>
+              <div className={styles.visualBadge}>mida.lot</div>
+              <h3 className={styles.visualTitle}>{t("homeVisualTitle")}</h3>
+              <p className={styles.visualText}>{t("homeVisualText")}</p>
+
+              <div className={styles.visualStats}>
+                <div className={styles.statItem}>
+                  <span className={styles.statLabel}>{t("homeStat1Label")}</span>
+                  <strong>{t("homeStat1Value")}</strong>
+                </div>
+
+                <div className={styles.statItem}>
+                  <span className={styles.statLabel}>{t("homeStat2Label")}</span>
+                  <strong>{t("homeStat2Value")}</strong>
+                </div>
+
+                <div className={styles.statItem}>
+                  <span className={styles.statLabel}>{t("homeStat3Label")}</span>
+                  <strong>{t("homeStat3Value")}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.highlights}>
+          <div className={styles.highlightCard}>
+            <h4>{t("highlight1Title")}</h4>
+            <p>{t("highlight1Text")}</p>
+          </div>
+
+          <div className={styles.highlightCard}>
+            <h4>{t("highlight2Title")}</h4>
+            <p>{t("highlight2Text")}</p>
+          </div>
+
+          <div className={styles.highlightCard}>
+            <h4>{t("highlight3Title")}</h4>
+            <p>{t("highlight3Text")}</p>
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }
