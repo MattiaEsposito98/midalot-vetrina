@@ -4,7 +4,7 @@ export const LanguageContext = createContext();
 
 const translations = {
   it: {
-    navHome: "Home2",
+    navHome: "Home",
     navServices: "Servizi Digitali",
     heroEyebrow: "Giveaway • Collaborazioni • Servizi digitali",
     heroTitle: "Facciamo crescere pagine, community e progetti online",
