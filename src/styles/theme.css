@@ -203,6 +203,44 @@ a {
   gap: 14px;
 }
 
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  transition: 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #000;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
 .instagram-link {
   display: inline-flex;
   align-items: center;
