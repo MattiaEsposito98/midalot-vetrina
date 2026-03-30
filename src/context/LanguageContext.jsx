@@ -7,7 +7,7 @@ const translations = {
     navHome: "Home",
     navServices: "Servizi Digitali",
     heroEyebrow: "Giveaway • Collaborazioni • Servizi digitali",
-    heroTitle: "Facciamo crescere pagine, community e progetti online",
+    heroTitle: "Facciamo crescere pagine, community e progetti online ",
     heroSubtitle:
       "Organizziamo giveaway reali, collaborazioni Instagram e servizi digitali pensati per chi vuole più visibilità online. Scopri il nostro profilo Instagram oppure dai un’occhiata ai servizi che offriamo.",
     heroInstagram: "Vai su Instagram",
@@ -80,7 +80,7 @@ const translations = {
     navHome: "Home",
     navServices: "Digital Services",
     heroEyebrow: "Giveaways • Collaborations • Digital services",
-    heroTitle: "We help pages, communities and online projects grow",
+    heroTitle: "We help pages, communities and online projects grow ",
     heroSubtitle:
       "We create real giveaways, Instagram collaborations and digital services for anyone who wants more online visibility. Discover our Instagram profile or take a look at the services we offer.",
     heroInstagram: "Go to Instagram",

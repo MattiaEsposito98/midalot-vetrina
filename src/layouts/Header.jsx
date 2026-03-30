@@ -22,7 +22,7 @@ export default function Header() {
           <img
             src="/Midalot.png"
             alt="Logo Mida"
-            style={{ width: "26px" }}
+            style={{ width: "40px" }}
           />
           Mida
         </Navbar.Brand>

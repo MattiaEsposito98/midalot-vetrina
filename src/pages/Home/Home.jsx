@@ -2,6 +2,8 @@ import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../hooks/useLanguage";
 import styles from "./Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowTrendUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -13,7 +15,10 @@ export default function Home() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>{t("heroEyebrow")}</p>
 
-            <h1 className={styles.title}>{t("heroTitle")}</h1>
+            <h1 className={styles.title}>
+              {t("heroTitle")}
+              <FontAwesomeIcon icon={faArrowTrendUp} />
+            </h1>
 
             <p className={styles.subtitle}>{t("heroSubtitle")}</p>
 
